@@ -3,8 +3,8 @@
   <UsingTask TaskName="NppPlugin.DllExport.MSBuild.DllExportTask"
              AssemblyFile="NppPlugin.DllExport.MSBuild.dll"/>
   <Target Name="AfterBuild"
-          DependsOnTargets="GetFrameworkPaths"
-          >
+          DependsOnTargets="GetFrameworkPaths">
+    
     <DllExportTask Platform="$(Platform)"
                    PlatformTarget="$(PlatformTarget)"
                    CpuType="$(CpuType)"
@@ -18,7 +18,7 @@
                    InputFileName="$(TargetPath)"
                    FrameworkPath="$(TargetedFrameworkDir);$(TargetFrameworkDirectory)"
                    LibToolPath="$(DevEnvDir)\..\..\VC\bin"
-                   LibToolDllPath="$(DevEnvDir)"
+                   LibToolDllPath="d:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE"
                    SdkPath="$(FrameworkSDKDir)"/>
   </Target>
 </Project>

@@ -12,7 +12,7 @@ namespace PrimeLogi
     class Main
     {
         #region " Fields "
-        internal const string PluginName = "Prime Log";
+        internal const string PluginName = "Prime Log3333";
         static string iniFilePath = null;
         static bool someSetting = false;
         static frmMyDlg frmMyDlg = null;

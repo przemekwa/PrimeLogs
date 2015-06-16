@@ -18,6 +18,9 @@ namespace PrimeLogi
     {
         public string Name { get; set; }
 
+        /// <summary>
+        /// fsdsdfsd
+        /// </summary>
         public List<Location> locationList { get; set; } 
 
         public LogInfo()
