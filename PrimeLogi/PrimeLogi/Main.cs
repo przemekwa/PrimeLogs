@@ -12,7 +12,7 @@ namespace PrimeLogi
     class Main
     {
         #region " Fields "
-        internal const string PluginName = "Prime Log3333";
+        internal const string PluginName = "PrimeLogi";
         static string iniFilePath = null;
         static bool someSetting = false;
         static frmMyDlg frmMyDlg = null;
@@ -70,7 +70,7 @@ namespace PrimeLogi
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

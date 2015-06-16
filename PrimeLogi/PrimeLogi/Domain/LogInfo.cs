@@ -21,11 +21,11 @@ namespace PrimeLogi
         /// <summary>
         /// fsdsdfsd
         /// </summary>
-        public List<Location> locationList { get; set; } 
+        public List<LocationInfo> locationList { get; set; } 
 
         public LogInfo()
         {
-            locationList = new List<Location>();
+            locationList = new List<LocationInfo>();
         }
     }
 }

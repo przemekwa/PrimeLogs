@@ -62,7 +62,8 @@
     <Compile Include="Forms\frmMyDlg.Designer.cs">
       <DependentUpon>frmMyDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogInfo.cs" />
+    <Compile Include="Domain\LogInfo.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="NppPluginNETBase.cs" />
     <Compile Include="NppPluginNETHelper.cs" />
@@ -72,7 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Location.cs" />
+    <Compile Include="Domain\LocationInfo.cs" />
     <Compile Include="UnmanagedExports.cs" />
     <Compile Include="XMLEngine.cs" />
   </ItemGroup>

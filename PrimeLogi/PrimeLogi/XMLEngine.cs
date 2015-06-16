@@ -11,6 +11,7 @@ namespace PrimeLogi
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Windows.Forms;
     using System.Xml;
 
@@ -33,29 +34,25 @@ namespace PrimeLogi
             {
                 xml.Load("PrimeLogi.xml");
                
-                var logsNodes = xml.GetElementsByTagName("log");
-
-                foreach (XmlNode logNode in logsNodes)
+                foreach (XmlNode logNode in xml.GetElementsByTagName("log"))
                 {
-                        var log = new LogInfo
+                        var logInfo = new LogInfo
                         {
                             Name = logNode.Attributes["name"].InnerText,
                         };
 
-                        var locationNodes = logNode.SelectNodes("location");
-
-                        foreach (XmlNode locationNode in locationNodes)
+                        foreach (XmlNode locationNode in logNode.SelectNodes("location"))
                         {
-                                var sro = new Location
+                                var locationInfo = new LocationInfo
                                 {
                                     Name = locationNode.Attributes["name"].InnerText,
                                     Path = locationNode.Attributes["path"].InnerText,
                                     Filter = locationNode.Attributes["filter"].InnerText
                                 };
-                                log.locationList.Add(sro);
+                                logInfo.locationList.Add(locationInfo);
                         }
 
-                        logList.Add(log);
+                        logList.Add(logInfo);
                 }
             }
             catch (Exception el)

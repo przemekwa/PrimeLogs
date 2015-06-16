@@ -56,7 +56,7 @@ namespace PrimeLogi
             int point = lb.IndexFromPoint(mouseEventArgs.Location);
             string name = lb.Name;
 
-            foreach (Location s in logList[index].locationList)
+            foreach (LocationInfo s in logList[index].locationList)
             {
                 if (s.Name != lb.Name) continue;
 
@@ -82,7 +82,7 @@ namespace PrimeLogi
             }
         }
 
-        private void CreateControl(IList<Location> s)
+        private void CreateControl(IList<LocationInfo> s)
         {
             for (var i = 0; i < s.Count; i++)
             {

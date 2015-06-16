@@ -16,7 +16,7 @@ namespace PrimeLogi
     /// <summary>
     /// Class for enviroment log.
     /// </summary>
-    public class Location
+    public class LocationInfo
     {
         /// <summary>
         /// Gets or sets regular sets. Only [*],[.] and [?] is valid.
@@ -40,23 +40,7 @@ namespace PrimeLogi
         {
             get
             {
-                return GetFiles();
-            }
-        }
-
-        /// <summary>
-        /// Gets list of files
-        /// </summary>
-        /// <returns></returns>
-        private string[] GetFiles()
-        {
-            try
-            {
-                return Directory.GetFiles(this.Path, this.Filter);
-            }
-            catch (Exception)
-            {
-                return new string[0];
+                return Helper.GetFiles(this.Path, this.Filter);
             }
         }
     }
