@@ -25,14 +25,13 @@ namespace PrimeLogiTests
                 };
 
                 File.WriteAllLines(PATH, content);
-
             }
         }
 
         [TestMethod]
         public void XmlLoadTest()
         {
-            var list = new XMLEngine().GetLogs();
+            var list = new XmlEngine().GetLogs();
 
             Assert.AreEqual(1, list.Count);
 

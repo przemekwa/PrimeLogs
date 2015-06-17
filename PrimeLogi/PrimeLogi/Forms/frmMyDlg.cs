@@ -28,9 +28,7 @@ namespace PrimeLogi
         {
             InitializeComponent();
 
-            var xml = new XMLEngine();
-
-            logList = xml.GetLogs();
+            logList = new XmlEngine().GetLogs();
 
             comboBox1.Items.Clear();
 
@@ -53,16 +51,16 @@ namespace PrimeLogi
         {
             ListBox lb = sender as ListBox;
 
-            int point = lb.IndexFromPoint(mouseEventArgs.Location);
+            int index = lb.IndexFromPoint(mouseEventArgs.Location);
             string name = lb.Name;
 
             foreach (LocationInfo s in logList[index].locationList)
             {
                 if (s.Name != lb.Name) continue;
 
-                if (point <= s.FilesPathList.Length && point != ListBox.NoMatches)
+                if (index <= s.FilesPathList.Length && index != ListBox.NoMatches)
                 {
-                    var path = s.FilesPathList[point];
+                    var path = s.FilesPathList[index];
                     Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, path);
                     MessageBox.Show("Node " + lb.Name + " load successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;

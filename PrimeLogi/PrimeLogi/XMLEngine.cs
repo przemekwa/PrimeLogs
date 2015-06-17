@@ -18,7 +18,7 @@ namespace PrimeLogi
     /// <summary>
     /// Main class for XML operation.
     /// </summary>
-    public class XMLEngine
+    public class XmlEngine
     {
         /// <summary>
         /// Get Log node form xml file.
@@ -28,10 +28,10 @@ namespace PrimeLogi
         {
             var logList = new List<LogInfo>();
 
-            var xml = new XmlDocument();
-            
             try
             {
+                var xml = new XmlDocument();
+
                 xml.Load("PrimeLogi.xml");
                
                 foreach (XmlNode logNode in xml.GetElementsByTagName("log"))
