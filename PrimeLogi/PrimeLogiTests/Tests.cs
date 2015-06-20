@@ -29,7 +29,7 @@ namespace PrimeLogiTests
         }
 
         [TestMethod]
-        public void XmlLoadTest()
+        public void XmlGetLogs()
         {
             var list = new XmlEngine().GetLogs();
 
@@ -39,5 +39,38 @@ namespace PrimeLogiTests
 
             Assert.AreEqual("Środowisko1", list[0].locationList[0].Name);
         }
+
+        [TestMethod]
+        public void LogName()
+        {
+            var list = new XmlEngine().GetLogs();
+
+            Assert.AreEqual("Testy", list[0].Name);
+        }
+
+        [TestMethod]
+        public void LocationName()
+        {
+            var list = new XmlEngine().GetLogs();
+
+            Assert.AreEqual("Środowisko1", list[0].locationList[0].Name);
+        }
+
+        [TestMethod]
+        public void PathName()
+        {
+            var list = new XmlEngine().GetLogs();
+
+            Assert.AreEqual("log.txt", list[0].locationList[0].Path);
+        }
+
+        [TestMethod]
+        public void FilterName()
+        {
+            var list = new XmlEngine().GetLogs();
+
+            Assert.AreEqual("*.*", list[0].locationList[0].Filter);
+        }
+
     }
 }
