@@ -28,19 +28,19 @@ namespace PrimeLogi
         {
             InitializeComponent();
 
-            logList = new XmlEngine().GetLogs();
+            comboBoxLogsList.Items.Clear();
 
-            comboBox1.Items.Clear();
+            logList = new XmlEngine().GetLogs();
 
             foreach (var log in logList)
             {
-                comboBox1.Items.Add(log.Name);
+                comboBoxLogsList.Items.Add(log.Name);
             }
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            index = this.comboBox1.SelectedIndex;
+            index = this.comboBoxLogsList.SelectedIndex;
 
             RemoveControl();
             
@@ -61,8 +61,11 @@ namespace PrimeLogi
                 if (index <= s.FilesPathList.Length && index != ListBox.NoMatches)
                 {
                     var path = s.FilesPathList[index];
+                    
                     Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, path);
-                    MessageBox.Show("Node " + lb.Name + " load successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show(string.Format("Node {0} load successful.", lb.Name), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     break;
                 }
             } 

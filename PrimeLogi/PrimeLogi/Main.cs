@@ -41,7 +41,7 @@ namespace PrimeLogi
             someSetting = (Win32.GetPrivateProfileInt("SomeSection", "SomeKey", 0, iniFilePath) != 0);
 
             PluginBase.SetCommand(0, "Browser", myDockableDialog,new ShortcutKey(true,false,false,Keys.L));
-            PluginBase.SetCommand(1, "Settings", mySettings);
+            PluginBase.SetCommand(1, "Settings2", mySettings);
             idMyDlg = 0;
         }
 

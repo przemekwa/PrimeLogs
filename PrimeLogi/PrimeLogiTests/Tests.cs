@@ -8,7 +8,7 @@ namespace PrimeLogiTests
     [TestClass]
     public class Tests
     {
-        private const string PATH = "PrimeLogi.xml";
+        private const string PATH   = "PrimeLogi.xml";
 
         [TestInitialize]
         public void Initialization()
@@ -59,6 +59,11 @@ namespace PrimeLogiTests
         [TestMethod]
         public void PathName()
         {
+
+            Func<string, short> test = short.Parse;
+
+
+
             var list = new XmlEngine().GetLogs();
 
             Assert.AreEqual("log.txt", list[0].locationList[0].Path);

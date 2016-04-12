@@ -16,6 +16,9 @@ namespace PrimeLogi
     /// </summary>
     public class LogInfo
     {
+
+        
+
         public string Name { get; set; }
 
         /// <summary>
