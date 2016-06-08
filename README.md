@@ -1,23 +1,24 @@
 PrimeLogs
 =========
 
-Notepad++ plugin do Notepad++.
+Plugin do Notepad++ napisany w C#.
 
 **Szybki start**
 
-PrimeLogs to plugin do notepad++, który pomaga w organizacji i przegladaniu logów z różnych aplikacji znajdujących się w róznych lokalizacjach.
+```PrimeLogs``` to plugin do notepad++ (do każdej wersji), który pomaga w organizacji i przegladaniu logów z różnych aplikacjii znajdujących się w różnych lokalizacjach.
 
 ##Instalacja
 
-Aby uzuskać plugin można albo pobrac go z Relasa z github-a albo samemu skompilować. Otrzymaną dll-klę nalezy wgrac do katalogu Plugin w katalogu z Notepad++.
+Aby uzyskać plugin można albo pobrać go z ```Relasa``` z github-a albo samemu skompilować ze źródeł. Otrzymaną dll-klę należy wgrać do katalogu ```Plugin``` w katalogu z Notepad++.
 
 ##Model
 
-Jedyne czego potrzebujemy aby coś zaprogramować to model. A wiec przedstawim model danych. Mamy plik logu, który nalezy do aplikacji A. Aplikacja A jest zainstalowana na serwerach S, S1, S2 itd. Jeśli chcemy przegladać logi to musimy wejść na serwer S, otworzyć logi aplikacji A. I tak dla każdego serwera.
+Jedyne czego potrzebujemy aby coś zaprogramować to model! A wiec przedstawiam model danych. 
+Mamy plik logu, który należy do aplikacji A. Aplikacja A jest zainstalowana na serwerach S, S1, S2 itd. Jeśli chcemy przegladać logi to musimy wejść na serwer S, otworzyć logi aplikacji A. I tak dla każdego serwera.
 
-Więz żeby było prosto zorganiowzałem te logi tak, aby było mozna jest przegladać w zależności od rodzaju aplikacji(aplikacja A) i od połazenia (serwery S, S1, S2) właśnie w takij kolejności.
+Więc, żeby było prosto zorganiowzałem te logi tak, aby było mozna je przeglądać w zależności od rodzaju aplikacji(aplikacja A) i od położenia (serwery S, S1, S2) właśnie w takiej kolejności.
 
-Ponieważ logi moga przyjmować różną formę, xml, json, txt to można filtrować po nazwach plików tak aby było mozna się dostać do tego co nas interesuje
+Ponieważ logi mogą przyjmować różną formę - xml, json, txt - to można filtrować po nazwach plików tak aby było można się dostać do tego co nas interesuje.
 
 ##Konfiguracja
 
@@ -35,15 +36,17 @@ Węzeł ```log``` zawiera atrybut ```name```, który służy do rozróżnienia a
 
 | Nazwa atrybutu  | Opis |
 | ------------- | ------------- |
-| ```name``` | Nazwa lokalizacji. Najlepiej aby była to zanwa serwera.  |
+| ```name``` | Nazwa lokalizacji. Najlepiej aby była to nazwa serwera.  |
 | ```path```  | Ścieżka do katalogu z logami.  |
 | ```filter```  | Zwykły filtr plików w katalogu. Dozwolone są proste wyrażenia ```WildCards```  |
 
 ##Podsumowanie
 
-Plugin pojawia się w zakładce ```Wtyczki->Prime Logs```. Z menu można wybrać ```Brower``` aby wczytać xml-a z konfiguracją i wybrac odpowiednie logi albo ```Settings``` aby móc edytować plik konfiguracyjny.
+Plugin pojawia się w zakładce ```Wtyczki->Prime Logs```. Z menu można wybrać ```Brower``` aby wczytać xml-a z konfiguracją i wybrać odpowiednie logi albo ```Settings``` aby móc edytować plik konfiguracyjny.
 
-Mozna również korzystać ze skrótu ```Ctrl + L```, który to od razu prowadzi do przeglądania logów.
+Można również korzystać ze skrótu ```Ctrl + L```, który to od razu prowadzi do przeglądania logów.
+
+
 
 
 
