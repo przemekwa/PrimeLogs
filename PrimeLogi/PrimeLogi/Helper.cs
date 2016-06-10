@@ -10,6 +10,7 @@ namespace PrimeLogi
     public static class Helper
     {
         public static readonly string CONFIGFILENAME = "PrimeLogi.xml";
+        public static readonly string[] CONFIGFILE = new[] { "<PrimeLogi>", " <log name=\"LogName\">", "  <location name=\"LocationName\" path=\"\" filter=\"*.txt\" ></location>", " </log>","</PrimeLogi>" };
 
         /// <summary>
         /// Gets list of files
@@ -32,7 +33,7 @@ namespace PrimeLogi
         {
             if (!File.Exists(filePath))
             {
-                File.Create(filePath).Dispose();
+                File.WriteAllLines(filePath, CONFIGFILE);
 
                 var fileInfo = new FileInfo(filePath);
 
