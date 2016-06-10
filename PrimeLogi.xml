@@ -1,0 +1,5 @@
+<PrimeLog>
+<log name="Testy">
+<location name="Środowisko1" path="log.txt" filter="*.*"/>
+</log>
+</PrimeLog>

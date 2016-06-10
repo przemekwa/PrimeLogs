@@ -41,7 +41,7 @@ namespace PrimeLogi
             someSetting = (Win32.GetPrivateProfileInt("SomeSection", "SomeKey", 0, iniFilePath) != 0);
 
             PluginBase.SetCommand(0, "Browser", myDockableDialog,new ShortcutKey(true,false,false,Keys.L));
-            PluginBase.SetCommand(1, "Settings2", mySettings);
+            PluginBase.SetCommand(1, "Settings", mySettings);
             idMyDlg = 0;
         }
 
@@ -66,7 +66,9 @@ namespace PrimeLogi
         {
             try
             {
-                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, "./PrimeLogi.xml");
+                Helper.CheckOrCreateConfigFile(Helper.CONFIGFILENAME);
+
+                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, "./"+ Helper.CONFIGFILENAME);
             }
             catch (Exception e)
             {

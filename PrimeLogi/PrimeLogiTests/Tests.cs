@@ -59,10 +59,7 @@ namespace PrimeLogiTests
         [TestMethod]
         public void PathName()
         {
-
             Func<string, short> test = short.Parse;
-
-
 
             var list = new XmlEngine().GetLogs();
 

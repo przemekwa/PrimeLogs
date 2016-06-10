@@ -12,6 +12,7 @@ namespace PrimeLogi
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.IO;
     using System.Windows.Forms;
     using System.Xml;
 
@@ -20,6 +21,8 @@ namespace PrimeLogi
     /// </summary>
     public class XmlEngine
     {
+       
+
         /// <summary>
         /// Get Log node form xml file.
         /// </summary>
@@ -32,7 +35,9 @@ namespace PrimeLogi
             {
                 var xml = new XmlDocument();
 
-                xml.Load("PrimeLogi.xml");
+                Helper.CheckOrCreateConfigFile(Helper.CONFIGFILENAME);
+
+                xml.Load(Helper.CONFIGFILENAME);
                
                 foreach (XmlNode logNode in xml.GetElementsByTagName("log"))
                 {
