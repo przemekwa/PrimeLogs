@@ -109,6 +109,7 @@ namespace PrimeLogi
             }
             else
             {
+                frmMyDlg.RefreshUi();
                 Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMyDlg.Handle);
             }
         }

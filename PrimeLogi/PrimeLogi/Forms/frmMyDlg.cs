@@ -17,7 +17,9 @@ namespace PrimeLogi
         /// <summary>
         /// 
         /// </summary>
-        private readonly List<LogInfo> logList = new List<LogInfo>();
+        private List<LogInfo> logList = new List<LogInfo>();
+
+        private XmlEngine xmlEngine;
 
         /// <summary>
         /// 
@@ -27,15 +29,17 @@ namespace PrimeLogi
         public frmMyDlg()
         {
             InitializeComponent();
+            this.xmlEngine = new XmlEngine();
+            RefreshUi();
+        }
 
+        public void RefreshUi()
+        {
             comboBoxLogsList.Items.Clear();
 
-            logList = new XmlEngine().GetLogs();
+            logList = this.xmlEngine.GetLogs();
 
-            foreach (var log in logList)
-            {
-                comboBoxLogsList.Items.Add(log.Name);
-            }
+            logList.ForEach(log => comboBoxLogsList.Items.Add(log.Name));
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
