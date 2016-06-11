@@ -10,7 +10,7 @@ namespace PrimeLogi
     public static class Helper
     {
         public static readonly string CONFIGFILENAME = "PrimeLogi.xml";
-        public static readonly string[] CONFIGFILEVALUES = new[] { "<PrimeLogi>", " <log name=\"LogName\">", "  <location name=\"LocationName\" path=\"\" filter=\"*.txt\" ></location>", " </log>","</PrimeLogi>" };
+        public static readonly string[] CONFIGFILEVALUES = new[] { "<PrimeLog>", " <log name=\"LogName\">", "  <location name=\"LocationName\" path=\"\" filter=\"*.txt\" ></location>", " </log>","</PrimeLog>" };
 
         /// <summary>
         /// Gets list of files
