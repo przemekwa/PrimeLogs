@@ -29,7 +29,7 @@ namespace PrimeLogiTests
         }
 
         [TestMethod]
-        public void XmlGetLogs()
+        public void Load_Config_File_Test()
         {
             var list = new XmlEngine().GetLogs();
 
@@ -41,7 +41,7 @@ namespace PrimeLogiTests
         }
 
         [TestMethod]
-        public void LogName()
+        public void Config_File_Log_Name_Exist_Test()
         {
             var list = new XmlEngine().GetLogs();
 
@@ -49,7 +49,7 @@ namespace PrimeLogiTests
         }
 
         [TestMethod]
-        public void LocationName()
+        public void Config_File_Location_Exist_Test()
         {
             var list = new XmlEngine().GetLogs();
 
@@ -57,17 +57,15 @@ namespace PrimeLogiTests
         }
 
         [TestMethod]
-        public void PathName()
+        public void Config_File_Path_Exist_Test()
         {
-            Func<string, short> test = short.Parse;
-
             var list = new XmlEngine().GetLogs();
 
             Assert.AreEqual("log.txt", list[0].locationList[0].Path);
         }
 
         [TestMethod]
-        public void FilterName()
+        public void Config_File_Filter_Exist_Test()
         {
             var list = new XmlEngine().GetLogs();
 
