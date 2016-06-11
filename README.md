@@ -46,6 +46,8 @@ Plugin pojawia się w zakładce ```Wtyczki->Prime Logs```. Z menu można wybrać
 
 Można również korzystać ze skrótu ```Ctrl + L```, który to od razu prowadzi do przeglądania logów.
 
+Więcej informacji można znaleść na moim blogu, gdzie opisałem jak tworzyć pluginy do Notepad++ w C#. http://blogprogramisty.net/plugin-do-notepad-w-c-sharp/
+
 
 
 
