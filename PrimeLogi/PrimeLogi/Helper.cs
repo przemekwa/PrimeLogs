@@ -10,7 +10,7 @@ namespace PrimeLogi
     public static class Helper
     {
         public static readonly string CONFIGFILENAME = "PrimeLogi.xml";
-        public static readonly string[] CONFIGFILE = new[] { "<PrimeLogi>", " <log name=\"LogName\">", "  <location name=\"LocationName\" path=\"\" filter=\"*.txt\" ></location>", " </log>","</PrimeLogi>" };
+        public static readonly string[] CONFIGFILEVALUES = new[] { "<PrimeLogi>", " <log name=\"LogName\">", "  <location name=\"LocationName\" path=\"\" filter=\"*.txt\" ></location>", " </log>","</PrimeLogi>" };
 
         /// <summary>
         /// Gets list of files
@@ -29,18 +29,25 @@ namespace PrimeLogi
             }
         }
 
+        public static bool CheckConfigFile(string fielPath)
+        {
+            return File.Exists(fielPath);
+        }
+
+        public static FileInfo CreateConfigFile(string filePath)
+        {
+            File.WriteAllLines(filePath, CONFIGFILEVALUES);
+
+            return new FileInfo(filePath);
+        }
+
         public static void CheckOrCreateConfigFile(string filePath)
         {
-            if (!File.Exists(filePath))
+            if (!CheckConfigFile(filePath))
             {
-                File.WriteAllLines(filePath, CONFIGFILE);
-
-                var fileInfo = new FileInfo(filePath);
-
                 MessageBox.Show(
-                    string.Format(
-                        "Utworzono plik konfiguracyjny. Lokalizacja pliku {0}", fileInfo.FullName),
-                    "Information",
+                    string.Format("Utworzono standardowy plik konfiguracyjny w {0}", CreateConfigFile(filePath).FullName),
+                    "Informacja",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }

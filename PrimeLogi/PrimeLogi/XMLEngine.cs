@@ -21,8 +21,6 @@ namespace PrimeLogi
     /// </summary>
     public class XmlEngine
     {
-       
-
         /// <summary>
         /// Get Log node form xml file.
         /// </summary>
