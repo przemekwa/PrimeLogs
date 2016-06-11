@@ -10,15 +10,18 @@ namespace PrimeLogi
     public partial class frmMyDlg : Form
     {
         /// <summary>
-        /// 
+        /// List of all control 
         /// </summary>
-        private readonly List<Control> controlList = new List<Control>();
- 
-        /// <summary>
-        /// 
-        /// </summary>
-        private List<LogInfo> logList = new List<LogInfo>();
+        private readonly List<Control> controlList;
 
+        /// <summary>
+        /// List of all logs in config file
+        /// </summary>
+        private List<LogInfo> logList;
+
+        /// <summary>
+        /// Xml engine
+        /// </summary>
         private XmlEngine xmlEngine;
 
         /// <summary>
@@ -30,6 +33,8 @@ namespace PrimeLogi
         {
             InitializeComponent();
             this.xmlEngine = new XmlEngine();
+            this.controlList = new List<Control>();
+            this.logList = new List<LogInfo>();
             RefreshUi();
         }
 
@@ -51,7 +56,7 @@ namespace PrimeLogi
             CreateControl(logList[index].locationList);
        }
 
-        private void Target(object sender, MouseEventArgs mouseEventArgs)
+        private void MouseDoubleClickOnLocationClick(object sender, MouseEventArgs mouseEventArgs)
         {
             ListBox lb = sender as ListBox;
 
@@ -87,13 +92,13 @@ namespace PrimeLogi
             }
         }
 
-        private void CreateControl(IList<LocationInfo> s)
+        private void CreateControl(IList<LocationInfo> locationList)
         {
-            for (var i = 0; i < s.Count; i++)
+            for (var i = 0; i < locationList.Count; i++)
             {
                 var gb = new GroupBox
                 {
-                    Text = s[i].Name,
+                    Text = locationList[i].Name,
                     Margin = new Padding(0,0,20,0),
                     Anchor = (AnchorStyles.Right | AnchorStyles.Left) 
                 };
@@ -101,12 +106,12 @@ namespace PrimeLogi
                 var lb = new ListBox
                 {
                     Dock = DockStyle.Fill,
-                    Name = s[i].Name
+                    Name = locationList[i].Name
                 };
 
-                lb.MouseDoubleClick += Target;
+                lb.MouseDoubleClick += MouseDoubleClickOnLocationClick;
 
-                foreach (var filePath in s[i].FilesPathList)
+                foreach (var filePath in locationList[i].FilesPathList)
                 {
                     lb.Items.Add(filePath.Substring(filePath.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1));
                 }
@@ -122,7 +127,7 @@ namespace PrimeLogi
 
             controlList.Add(emptyPanel);
 
-            tableLayoutPanel1.Controls.Add(emptyPanel, 0, s.Count);
+            tableLayoutPanel1.Controls.Add(emptyPanel, 0, locationList.Count);
         }
 
         private void frmMyDlg_Load(object sender, EventArgs e)
