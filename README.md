@@ -9,7 +9,7 @@ Plugin do Notepad++ napisany w C#.
 
 ##Instalacja
 
-Aby uzyskać plugin można albo pobrać go z ```Relasa``` z github-a albo samemu skompilować ze źródeł. Otrzymaną dll-klę należy wgrać do katalogu ```Plugin``` w katalogu z Notepad++.
+Aby uzyskać plugin można albo pobrać go z zakładki ```Realase``` z github-a albo samemu skompilować ze źródeł. Otrzymaną dll-klę należy wgrać do katalogu ```Plugin``` w katalogu z Notepad++.
 
 ##Model
 
@@ -45,6 +45,8 @@ Węzeł ```log``` zawiera atrybut ```name```, który służy do rozróżnienia a
 Plugin pojawia się w zakładce ```Wtyczki->Prime Logs```. Z menu można wybrać ```Brower``` aby wczytać xml-a z konfiguracją i wybrać odpowiednie logi albo ```Settings``` aby móc edytować plik konfiguracyjny.
 
 Można również korzystać ze skrótu ```Ctrl + L```, który to od razu prowadzi do przeglądania logów.
+
+Więcej informacji można znaleść na moim blogu, gdzie opisałem jak tworzyć pluginy do Notepad++ w C#. http://blogprogramisty.net/plugin-do-notepad-w-c-sharp/
 
 
 
