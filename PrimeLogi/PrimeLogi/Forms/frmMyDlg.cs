@@ -27,7 +27,7 @@ namespace PrimeLogi
         /// <summary>
         /// 
         /// </summary>
-        private int index { get; set; }
+        private int indexFromLogList { get; set; }
    
         public frmMyDlg()
         {
@@ -49,27 +49,26 @@ namespace PrimeLogi
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            index = this.comboBoxLogsList.SelectedIndex;
+            indexFromLogList = this.comboBoxLogsList.SelectedIndex;
 
             RemoveControl();
             
-            CreateControl(logList[index].locationList);
+            CreateControl(logList[indexFromLogList].locationList);
        }
 
         private void MouseDoubleClickOnLocationClick(object sender, MouseEventArgs mouseEventArgs)
         {
             ListBox lb = sender as ListBox;
 
-            int index = lb.IndexFromPoint(mouseEventArgs.Location);
-            string name = lb.Name;
+            int fileLocationIndex = lb.IndexFromPoint(mouseEventArgs.Location);
 
-            foreach (LocationInfo s in logList[index].locationList)
+            foreach (LocationInfo s in logList[this.indexFromLogList].locationList)
             {
                 if (s.Name != lb.Name) continue;
 
-                if (index <= s.FilesPathList.Length && index != ListBox.NoMatches)
+                if (fileLocationIndex <= s.FilesPathList.Length && fileLocationIndex != ListBox.NoMatches)
                 {
-                    var path = s.FilesPathList[index];
+                    var path = s.FilesPathList[fileLocationIndex];
                     
                     Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, path);
 
