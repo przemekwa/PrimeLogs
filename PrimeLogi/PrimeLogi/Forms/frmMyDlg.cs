@@ -63,7 +63,7 @@ namespace PrimeLogi
             int index = lb.IndexFromPoint(mouseEventArgs.Location);
             string name = lb.Name;
 
-            foreach (LocationInfo s in logList[index].locationList)
+            foreach (LocationInfo s in logList[this.index].locationList)
             {
                 if (s.Name != lb.Name) continue;
 
