@@ -11,9 +11,9 @@ Plugin do Notepad++ napisany w C#.
 
 Aby uzyskać plugin można albo pobrać go z zakładki ```Realase``` z github-a albo samemu skompilować ze źródeł. Otrzymaną dll-klę należy wgrać do katalogu ```Plugin``` w katalogu z Notepad++.
 
-UWAGA
+##UWAGA
 
-Aby udało się poprawnie skompilować ten plugin(jak i inne pluginy do Netpad++ do c#), trzeba do Visual Studio dodać pakiet od VC++. Bez tego dll się skompiluje ale w okienku Output będzie komuniakt, że brakuje programu lib.exe w pewnej lokalizacji.
+Aby udało się poprawnie skompilować ten plugin(jak i inne pluginy do Notepad++ do C# z szablonu ze strony Notepad++), trzeba do Visual Studio dodać pakiet od VC++. Bez tego dll się skompiluje ale w okienku Output będzie komuniakt, że brakuje programu lib.exe w pewnej lokalizacji. To powoduje, że nie da się dodać pluginu do Notepadd++, bo wyskakuje komunikat o tym, że jest niezgody z aktualną wersją Notepad++
 
 
 ##Model
