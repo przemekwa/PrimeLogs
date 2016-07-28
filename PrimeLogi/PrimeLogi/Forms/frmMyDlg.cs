@@ -32,9 +32,11 @@ namespace PrimeLogi
         public frmMyDlg()
         {
             InitializeComponent();
+
             this.xmlEngine = new XmlEngine();
             this.controlList = new List<Control>();
             this.logList = new List<LogInfo>();
+
             RefreshUi();
         }
 
@@ -51,28 +53,28 @@ namespace PrimeLogi
         {
             indexFromLogList = this.comboBoxLogsList.SelectedIndex;
 
-            RemoveControl();
+            this.RemoveControl();
             
             CreateControl(logList[indexFromLogList].locationList);
        }
 
         private void MouseDoubleClickOnLocationClick(object sender, MouseEventArgs mouseEventArgs)
         {
-            ListBox lb = sender as ListBox;
+            var lb = sender as ListBox;
 
-            int fileLocationIndex = lb.IndexFromPoint(mouseEventArgs.Location);
+            var fileLocationIndex = lb.IndexFromPoint(mouseEventArgs.Location);
 
-            foreach (LocationInfo s in logList[this.indexFromLogList].locationList)
+            foreach (var location in logList[this.indexFromLogList].locationList)
             {
-                if (s.Name != lb.Name) continue;
+                if (location.Name != lb.Name) continue;
 
-                if (fileLocationIndex <= s.FilesPathList.Length && fileLocationIndex != ListBox.NoMatches)
+                if (fileLocationIndex <= location.FilesPathList.Length && fileLocationIndex != ListBox.NoMatches)
                 {
-                    var path = s.FilesPathList[fileLocationIndex];
+                    var path = location.FilesPathList[fileLocationIndex];
                     
                     Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, path);
 
-                    MessageBox.Show(string.Format("Node {0} load successful.", lb.Name), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Node {lb.Name} load successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
                 }
