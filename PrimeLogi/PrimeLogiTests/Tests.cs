@@ -37,7 +37,7 @@ namespace PrimeLogiTests
 
             Assert.AreEqual("Testy", list[0].Name);
 
-            Assert.AreEqual("Środowisko1", list[0].locationList[0].Name);
+            Assert.AreEqual("Środowisko1", list[0].LocationList[0].Name);
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace PrimeLogiTests
         {
             var list = new XmlEngine().GetLogs();
 
-            Assert.AreEqual("Środowisko1", list[0].locationList[0].Name);
+            Assert.AreEqual("Środowisko1", list[0].LocationList[0].Name);
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace PrimeLogiTests
         {
             var list = new XmlEngine().GetLogs();
 
-            Assert.AreEqual("log.txt", list[0].locationList[0].Path);
+            Assert.AreEqual("log.txt", list[0].LocationList[0].Path);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace PrimeLogiTests
         {
             var list = new XmlEngine().GetLogs();
 
-            Assert.AreEqual("*.*", list[0].locationList[0].Filter);
+            Assert.AreEqual("*.*", list[0].LocationList[0].Filter);
         }
 
     }

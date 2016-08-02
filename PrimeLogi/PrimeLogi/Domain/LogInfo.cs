@@ -7,28 +7,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using PrimeLogi.Domain;
-
-namespace PrimeLogi
+namespace PrimeLogi.Domain
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// TODO: Update summary.
+    /// Class with log information
     /// </summary>
     public class LogInfo
     {
-
+        /// <summary>
+        /// Gets or sets name of the log
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// fsdsdfsd
+        /// Gets or sets list with location
         /// </summary>
-        public List<LocationInfo> locationList { get; set; } 
+        public List<LocationInfo> LocationList { get; set; } 
 
         public LogInfo()
         {
-            locationList = new List<LocationInfo>();
+            LocationList = new List<LocationInfo>();
         }
     }
 }

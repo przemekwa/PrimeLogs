@@ -57,7 +57,7 @@ namespace PrimeLogi
 
             this.RemoveControl();
             
-            CreateControl(logList[indexFromLogList].locationList);
+            CreateControl(logList[indexFromLogList].LocationList);
        }
 
         private void MouseDoubleClickOnLocationClick(object sender, MouseEventArgs mouseEventArgs)
@@ -66,7 +66,7 @@ namespace PrimeLogi
 
             var fileLocationIndex = lb.IndexFromPoint(mouseEventArgs.Location);
 
-            foreach (var location in logList[this.indexFromLogList].locationList)
+            foreach (var location in logList[this.indexFromLogList].LocationList)
             {
                 if (location.Name != lb.Name) continue;
 

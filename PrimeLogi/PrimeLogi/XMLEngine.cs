@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using PrimeLogi.Domain;
+
 namespace PrimeLogi
 {
     using System;
@@ -50,7 +52,7 @@ namespace PrimeLogi
                                     Path = locationNode.Attributes["path"].InnerText,
                                     Filter = locationNode.Attributes["filter"].InnerText
                                 };
-                                logInfo.locationList.Add(locationInfo);
+                                logInfo.LocationList.Add(locationInfo);
                         }
 
                         logList.Add(logInfo);
