@@ -8,11 +8,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace PrimeLogi
+namespace PrimeLogi.Domain
 {
-    using System;
-    using System.IO;
-
     /// <summary>
     /// Class for enviroment log.
     /// </summary>
@@ -36,12 +33,6 @@ namespace PrimeLogi
         /// <summary>
         /// Gets list of files in path
         /// </summary>
-        public string[] FilesPathList
-        {
-            get
-            {
-                return Helper.GetFiles(this.Path, this.Filter);
-            }
-        }
+        public string[] FilesPathList => Helper.GetFiles(this.Path, this.Filter);
     }
 }

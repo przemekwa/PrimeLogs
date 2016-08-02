@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using PrimeLogi.Domain;
+
 namespace PrimeLogi
 {
     using System.Collections.Generic;
@@ -16,8 +18,6 @@ namespace PrimeLogi
     /// </summary>
     public class LogInfo
     {
-
-        
 
         public string Name { get; set; }
 

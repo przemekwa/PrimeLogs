@@ -1,5 +1,7 @@
 ﻿
 
+using PrimeLogi.Domain;
+
 namespace PrimeLogi
 {
     using System;
