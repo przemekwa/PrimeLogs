@@ -36,26 +36,26 @@ namespace PrimeLogi
                 Helper.CheckOrCreateConfigFile(Helper.CONFIGFILENAME);
 
                 xml.Load(Helper.CONFIGFILENAME);
-               
+
                 foreach (XmlNode logNode in xml.GetElementsByTagName("log"))
                 {
-                        var logInfo = new LogInfo
+                    var logInfo = new LogInfo
+                    {
+                        Name = logNode.Attributes["name"].InnerText,
+                    };
+
+                    foreach (XmlNode locationNode in logNode.SelectNodes("location"))
+                    {
+                        var locationInfo = new LocationInfo
                         {
-                            Name = logNode.Attributes["name"].InnerText,
+                            Name = locationNode.Attributes["name"].InnerText,
+                            Path = locationNode.Attributes["path"].InnerText,
+                            Filter = locationNode.Attributes["filter"].InnerText
                         };
+                        logInfo.LocationList.Add(locationInfo);
+                    }
 
-                        foreach (XmlNode locationNode in logNode.SelectNodes("location"))
-                        {
-                                var locationInfo = new LocationInfo
-                                {
-                                    Name = locationNode.Attributes["name"].InnerText,
-                                    Path = locationNode.Attributes["path"].InnerText,
-                                    Filter = locationNode.Attributes["filter"].InnerText
-                                };
-                                logInfo.LocationList.Add(locationInfo);
-                        }
-
-                        logList.Add(logInfo);
+                    logList.Add(logInfo);
                 }
             }
             catch (Exception el)

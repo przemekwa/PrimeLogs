@@ -1,1 +1,5 @@
 I added the directory "c:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools" to the path. Then both the NPP C# demo and Shaleen's code compile successfully. Both work when their DLLs are added to the Notepad++ plugin directory.
+
+
+Aby udało się poprawnie skompilować ten plugin(jak i inne pluginy do Notepad++ do C# z szablonu ze strony Notepad++), trzeba do Visual Studio dodać pakiet od VC++. Bez tego dll się skompiluje ale w okienku Output będzie komuniakt, że brakuje programu lib.exe w pewnej lokalizacji. To powoduje, że nie da się dodać pluginu do Notepadd++, bo wyskakuje komunikat o tym, że jest niezgody z aktualną wersją Notepad++
+
